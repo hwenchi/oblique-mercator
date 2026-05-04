@@ -45,7 +45,7 @@ $`\lambda = 2\pi u - \pi`$ and latitude $`\phi = \pi/2 - \pi v`$.
 **Sphere.** A point $`\mathbf{p}`$ on the unit sphere gives UV directly:
 
 ```math
-u = \frac{\operatorname{atan2}(p_y, p_x) + \pi}{2\pi}, \qquad v = \frac{\pi/2 - \operatorname{atan2}(p_z,\, \|\mathbf{p}_{xy}\|)}{\pi}
+u = \frac{\mathrm{atan2}(p_y, p_x) + \pi}{2\pi}, \qquad v = \frac{\pi/2 - \mathrm{atan2}(p_z,\, \|\mathbf{p}_{xy}\|)}{\pi}
 ```
 
 **Cylinder.** A point $`\mathbf{p}`$ on the cylinder is brought into the
