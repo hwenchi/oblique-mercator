@@ -27,11 +27,17 @@ memory.
 tilting the projection in real time. The purpose is to make the distortion
 visibly shift from one region to another — watching Greenland shrink as the
 axis tilts, while distortion grows elsewhere, makes the projection feel like a
-variable rather than a fixed fact. This requires situating Mercator within a
-continuous family of projections. The family parameterized by cylinder axis is the family of oblique Mercator
-projections, a subspace of all projections homeomorphic to $`\mathbb{RP}^2`$:
-the axis is a point on $`S^2`$, but since $`v`$ and $`-v`$ define the same
-cylinder, antipodal points are identified.
+variable rather than a fixed fact. We deform within the family of oblique
+Mercator projections (varying the axis) rather than morphing between different
+kinds of projections for two reasons. First, there is no canonical interpolation
+between fundamentally different projection types — what is halfway between
+Mercator and stereographic is not well-defined — whereas rotating the axis is a
+natural, well-defined path. Second, fixing the projection type and varying only the axis means the viewer
+can directly perceive the relationship between the parameter and the visual
+change — the comprehensibility of that connection would be lost if multiple
+aspects of the projection changed at once. This family is a subspace of all projections
+homeomorphic to $`\mathbb{RP}^2`$: the axis is a point on $`S^2`$, but since
+$`v`$ and $`-v`$ define the same cylinder, antipodal points are identified.
 
 ## Technical Challenges
 
