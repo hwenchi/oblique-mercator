@@ -4,7 +4,7 @@
 
 ## Rhetorical Design
 
-### Goal
+### Purpose
 
 For an audience of any familiarity with the Mercator projection, we want to
 communicate that a map projection is a choice, not a fact. The familiar
