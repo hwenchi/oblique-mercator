@@ -21,7 +21,8 @@ simultaneously and transparently. The purpose is to make the correspondence
 between the undistorted shape and the projected shape immediate: the viewer can
 trace a continent from the sphere to the cylinder and see exactly where and how
 the distortion is introduced, without having to hold two separate images in
-memory.
+memory. This is only possible in an interactive 3D visualization — no static or
+2D medium can place both representations in the same space at once.
 
 **Continuous deformation.** The cylinder axis is an interactive parameter,
 tilting the projection in real time. The purpose is to make the distortion
