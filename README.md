@@ -38,28 +38,33 @@ antipodal points are identified.
 ### 1. Projection formula
 
 A rotation $`T \in \mathrm{SO}(3)`$ parameterizes the family: it defines the
-cylinder axis and hence which Mercator projection is displayed. Define the
-equirectangular map $`E`$ and the Mercator inverse $`M^{-1}`$ as:
-
-```math
-E: S^2 \to \mathbb{R}^2, \quad (x,y,z) \mapsto \bigl(\mathrm{atan2}(y, x),\; \mathrm{atan2}(z,\, \sqrt{x^2+y^2})\bigr)
-```
-
-```math
-M^{-1}: \mathbb{R}^3 \to S^2, \quad (x',y',z') \mapsto (\cos\phi'\cos\lambda',\; \cos\phi'\sin\lambda',\; \sin\phi')
-```
-
-where $`\lambda' = \mathrm{atan2}(y', x')`$ and $`\phi' = 2\arctan(e^{z'/R}) - \pi/2`$.
-
-The sphere maps to $`(\lambda, \phi)`$ via $`E`$ directly. The cylinder maps via the composition:
+cylinder axis and hence which Mercator projection is displayed. The Mercator
+formula is only defined for the standard (vertical) axis. Rather than
+re-deriving it for an arbitrary axis, we rotate into the cylinder's frame,
+apply the standard formula, and rotate back. This gives the projection as a
+composition:
 
 ```math
 P_T = E \circ T \circ M^{-1} \circ T^{-1}
 ```
 
-Since $`M^{-1}`$ is smooth within $`\pm 85°`$ latitude (where the cylinder is
-clipped) and $`T`$ is smooth, $`P_T`$ varies smoothly with $`T`$ — so
-continuously rotating the axis continuously deforms the projected image.
+where $`E`$ is the equirectangular map and $`M^{-1}`$ is the standard Mercator
+inverse, both for the vertical axis:
+
+```math
+E(x, y, z) = \bigl(\mathrm{atan2}(y,\, x),\; \mathrm{atan2}(z,\, \sqrt{x^2+y^2})\bigr)
+```
+
+```math
+M^{-1}(x', y', z') = (\cos\phi'\cos\lambda',\; \cos\phi'\sin\lambda',\; \sin\phi')
+```
+
+where $`\lambda' = \mathrm{atan2}(y', x')`$ and $`\phi' = 2\arctan(e^{z'/R}) - \pi/2`$.
+
+The sphere maps to $`(\lambda, \phi)`$ via $`E`$ directly. Since $`M^{-1}`$ is
+smooth within $`\pm 85°`$ latitude (where the cylinder is clipped) and $`T`$ is
+smooth, $`P_T`$ varies smoothly with $`T`$ — so continuously rotating the axis
+continuously deforms the projected image.
 
 ### 2. Triangle mesh vs. ray tracing
 
