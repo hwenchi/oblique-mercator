@@ -1,4 +1,4 @@
-# Mercator 3D
+# Oblique Mercator
 
 **Live demo:** https://galmungral.github.io/mercator-3d/
 
