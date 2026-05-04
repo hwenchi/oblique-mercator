@@ -28,10 +28,10 @@ tilting the projection in real time. The purpose is to make the distortion
 visibly shift from one region to another — watching Greenland shrink as the
 axis tilts, while distortion grows elsewhere, makes the projection feel like a
 variable rather than a fixed fact. This requires situating Mercator within a
-continuous family of projections. The family parameterized by cylinder axis is
-a subspace of all projections homeomorphic to $`\mathbb{RP}^2`$: the axis is a
-point on $`S^2`$, but since $`v`$ and $`-v`$ define the same cylinder,
-antipodal points are identified.
+continuous family of projections. The family parameterized by cylinder axis is the family of oblique Mercator
+projections, a subspace of all projections homeomorphic to $`\mathbb{RP}^2`$:
+the axis is a point on $`S^2`$, but since $`v`$ and $`-v`$ define the same
+cylinder, antipodal points are identified.
 
 ## Technical Challenges
 
