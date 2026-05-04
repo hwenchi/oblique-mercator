@@ -32,10 +32,12 @@ Mercator projections (varying the axis) rather than morphing between different
 kinds of projections for two reasons. First, there is no canonical interpolation
 between fundamentally different projection types — what is halfway between
 Mercator and stereographic is not well-defined — whereas rotating the axis is a
-natural, well-defined path. Second, fixing the projection type and varying only the axis means the viewer
-can directly perceive the relationship between the parameter and the visual
-change — the comprehensibility of that connection would be lost if multiple
-aspects of the projection changed at once. This family is a subspace of all projections
+natural, well-defined path. Second, the goal is not visual spectacle but understanding: the viewer should
+be able to see *why* the map looks the way it does, not just watch it change.
+Morphing between fundamentally different projection types might produce more
+dramatic transformations, but the connection between cause and effect would be
+opaque. Varying a single geometric parameter — the axis — keeps that connection
+legible. This family is a subspace of all projections
 homeomorphic to $`\mathbb{RP}^2`$: the axis is a point on $`S^2`$, but since
 $`v`$ and $`-v`$ define the same cylinder, antipodal points are identified.
 
