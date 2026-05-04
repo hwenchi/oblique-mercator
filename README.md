@@ -38,33 +38,29 @@ antipodal points are identified.
 ### 1. Projection formula
 
 A rotation $`T \in \mathrm{SO}(3)`$ parameterizes the family: it defines the
-cylinder axis and hence which Mercator projection is displayed. Both surfaces
-share an equirectangular map in which $`(u, v) \in [0,1]^2`$ encodes longitude
-$`\lambda = 2\pi u - \pi`$ and latitude $`\phi = \pi/2 - \pi v`$.
-
-**Sphere.** A point $`\mathbf{p}`$ on the unit sphere gives UV directly:
-
-```math
-u = \frac{\mathrm{atan2}(y, x) + \pi}{2\pi}, \qquad v = \frac{\pi/2 - \mathrm{atan2}(z,\, \sqrt{x^2+y^2})}{\pi}
-```
-
-**Cylinder.** A point $`\mathbf{p}`$ on the cylinder is brought into the
-cylinder's frame by $`\mathbf{p}_0 = T^{-1}\mathbf{p}`$. Its cylinder
-coordinates $`(\theta_0, z_0)`$ are inverted through the Mercator formula to
-recover the geographic latitude:
+cylinder axis and hence which Mercator projection is displayed. Let
+$`E: S^2 \to \mathbb{R}^2`$ denote the equirectangular coordinate map (longitude
+and latitude of a point on the sphere) and $`M^{-1}`$ the Mercator inverse (a
+point on the cylinder to a point on the sphere in the cylinder's frame). The
+projection is the composition:
 
 ```math
-\phi_0 = 2\arctan\!\left(e^{z_0/R}\right) - \frac{\pi}{2}
+P_T = E \circ T \circ M^{-1} \circ T^{-1}
 ```
 
-The corresponding sphere point is rotated back to world space $`\mathbf{r} = T\mathbf{r}_0`$, from which UV is read using the sphere formula:
+Explicitly, given a point $`\mathbf{p}`$ on the cylinder, let $`(x', y', z') = T^{-1}\mathbf{p}`$. Then:
 
 ```math
-\mathbf{r}_0 = (\cos\phi_0 \cos\theta_0,\, \cos\phi_0 \sin\theta_0,\, \sin\phi_0)
+M^{-1}:\quad \lambda' = \mathrm{atan2}(y', x'), \quad \phi' = 2\arctan\!\left(e^{z'/R}\right) - \frac{\pi}{2}, \quad \mathbf{r}' = (\cos\phi'\cos\lambda',\; \cos\phi'\sin\lambda',\; \sin\phi')
 ```
-Since the Mercator formula is smooth away from the poles and the cylinder is
-clipped to $`\pm 85°`$ latitude, the projection varies smoothly with $`T`$ —
-so continuously rotating the axis continuously deforms the projected image.
+
+```math
+E:\quad (\lambda, \phi) \text{ of } T\mathbf{r}' \in S^2, \quad \lambda = \mathrm{atan2}(y, x), \quad \phi = \mathrm{atan2}(z,\, \sqrt{x^2+y^2})
+```
+
+Since $`M^{-1}`$ is smooth within $`\pm 85°`$ latitude (where the cylinder is
+clipped) and $`T`$ is smooth, $`P_T`$ varies smoothly with $`T`$ — so
+continuously rotating the axis continuously deforms the projected image.
 
 ### 2. Triangle mesh vs. ray tracing
 
