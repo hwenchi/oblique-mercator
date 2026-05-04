@@ -57,9 +57,11 @@ recover the geographic latitude:
 \phi_0 = 2\arctan\!\left(e^{z_0/R}\right) - \frac{\pi}{2}
 ```
 
-The corresponding sphere point $`\mathbf{r}_0 = (\cos\phi_0 \cos\theta_0,\,
-\cos\phi_0 \sin\theta_0,\, \sin\phi_0)`$ is rotated back to world space
-$`\mathbf{r} = T\mathbf{r}_0`$, from which UV is read using the sphere formula.
+The corresponding sphere point is rotated back to world space $`\mathbf{r} = T\mathbf{r}_0`$, from which UV is read using the sphere formula:
+
+```math
+\mathbf{r}_0 = (\cos\phi_0 \cos\theta_0,\, \cos\phi_0 \sin\theta_0,\, \sin\phi_0)
+```
 Since the Mercator formula is smooth away from the poles and the cylinder is
 clipped to $`\pm 85°`$ latitude, the projection varies smoothly with $`T`$ —
 so continuously rotating the axis continuously deforms the projected image.
