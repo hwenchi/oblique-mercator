@@ -1,16 +1,24 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
 <body style="margin: 0">
   <div
     style="
       position: fixed;
-      top: 0;
+      bottom: 0;
       left: 0;
-      color: white;
-      font: bold 20px monospace;
-      margin: 10px;
+      color: rgba(255,255,255,0.55);
+      font: 300 13px/2.2 'Inter', sans-serif;
+      letter-spacing: 0.03em;
+      margin: 24px;
+      padding: 14px 20px;
+      background: rgba(0,0,0,0.35);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
     "
   >
-    arrow keys: adjust axis<br />
-    W/S: zoom in/out<br />
+    arrow keys — adjust axis<br />
+    W / S — zoom
   </div>
   <canvas id="main" style="background-color: black"></canvas>
   <script src="index.js"></script>
