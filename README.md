@@ -1,6 +1,6 @@
 # Oblique Mercator
 
-**Live demo:** https://galmungral.github.io/mercator-3d/
+**Live demo:** https://hwenchi.github.io/mercator-3d/
 
 ## Rhetorical Design
 
